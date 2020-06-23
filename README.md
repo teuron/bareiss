@@ -8,7 +8,7 @@ Add this to your `Cargo.toml`:
 
 ```toml
 [dependencies]
-rand = "0.7"
+bareiss = "0.1"
 ```
 
 ## Example

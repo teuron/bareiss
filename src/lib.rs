@@ -1,7 +1,32 @@
+//! Utilities for random number generation
+//!
+//! Bareiss algorithm calculates the determinant of an integer square
+//! matrix only using integer arithmetics.
+//!
+//! # Examples
+//!
+//! ```
+//! use bareiss::bareiss_determinant;
+//!
+//! let mut matrix = vec![1, 2, 3, 10];
+//! assert_eq!(bareiss_determinant(&mut matrix, 2).unwrap(), 4);
+//! ```
+
 use core::ops::Div;
 use core::ops::Mul;
 use core::ops::Sub;
 
+/// Bareiss algorithm calculates the determinant of an integer square
+/// matrix only using integer arithmetics.
+///
+/// # Examples
+///
+/// ```
+/// use bareiss::bareiss_determinant;
+///
+/// let mut matrix = vec![1, 2, 3, 10];
+/// assert_eq!(bareiss_determinant(&mut matrix, 2).unwrap(), 4);
+/// ```
 pub fn bareiss_determinant<T>(matrix: &mut Vec<T>, rows: usize) -> Result<T, &'static str>
 where
     T: Sub<Output = T> + Div<Output = T> + Mul<Output = T> + Copy,
